@@ -1,0 +1,25 @@
+name: CI/CD for API app
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t flask_app .
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker tag flask_app:latest justingav/flask_live_app:latest
+        docker push justingav/flask_live_app:latest
+
+    - name: Deploy with Docker Compose
+      run: docker-compose up -d
