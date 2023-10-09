@@ -1,6 +1,6 @@
 name: CI for API app
 
-on:
+on: # Select branches to preform actions and conditions for actions to be preformed.
   push:
     branches: [ "main" ]
   pull_request:
@@ -14,7 +14,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
     
-    - name: Build and push Docker image
+    - name: Build and push Docker image # Build and push docker image.
       uses: docker/build-push-action@v2
       with:
         context: .
