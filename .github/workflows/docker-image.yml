@@ -1,4 +1,4 @@
-name: CI/CD for API app
+name: CI for API app
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: src/Dockerfile.ci 
+        file: ./src/Dockerfile.ci 
         push: true
         tags: |
           justingav/flask_live_app:latest
