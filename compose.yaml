@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+
+  flask_app:
+
+    container_name: flask_app
+
+    image: justingav/flask_live_app:1.0.0.0
+
+    build: .
+
+    ports: # ports being listened on
+      - "4000:4000"
+
+    environment:
+      - DB_URL=postgresql://postgres:postgres@flask_db:5432/postgres
+
+    depends_on: # the database being used
+      - flask_db
+
+  flask_db:
+
+    container_name: flask_db
+
+    image: postgres:latest
+
+    ports:
+      - "5432:5432"
+
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: {}
