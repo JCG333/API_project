@@ -29,8 +29,6 @@ create_tables()
 def test():
     return make_response(jsonify({'message': 'test route'}), 200)
 
-
-
 #create user
 @app.route('/users', methods=['POST'])
 def create_user():
@@ -56,7 +54,7 @@ def get_users():
 @app.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
     try:
-        user = User.json.query.filter_by(id=id).first() # query user filtered by id
+        user = User.query.filter_by(id=id).first() # query user filtered by id
         if user:
             return make_response(jsonify({'users': user.json()}), 200)
         return make_response(jsonify({'message': 'user not found'}), 404)
