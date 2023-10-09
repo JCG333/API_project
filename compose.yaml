@@ -6,7 +6,7 @@ services:
 
     container_name: flask_app
 
-    image: justingav/flask_live_app:1.0.0.0
+    image: justingav/flask_live_app:latest
 
     build: .
 
