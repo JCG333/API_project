@@ -1,0 +1,18 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+}
+.container .navbar {
+  background-color: #f8f9fa;
+}
+.container .navbar .nav-item {
+  padding: 20px;
+  color: #1a1a1a;
+}
+.container .navbar .nav-item:hover {
+  background-color: white;
+}/*# sourceMappingURL=main.css.map */

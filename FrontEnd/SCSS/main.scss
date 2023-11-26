@@ -1,0 +1,24 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+
+.container {
+    width: 100%;
+
+    .navbar {
+        background-color: #f8f9fa;
+
+        .nav-item {
+            padding: 20px;
+            color: darken($primary-color, 10%);
+
+            &:hover {
+                background-color: lighten(#f8f9fa, 10%);
+            }
+        }
+    }
+}
