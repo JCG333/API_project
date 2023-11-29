@@ -37,12 +37,18 @@ def test():
 def create_user():
     try:
         data = request.get_json()
+        existing_user = User.query.filter_by(username=data['username']).first() # check if user exists
+        if existing_user:
+            return make_response(jsonify({'message': 'username already exists'}), 400)
+        existing_email = User.query.filter_by(email=data['email']).first() # check if email exists
+        if existing_email:
+            return make_response(jsonify({'message': 'email already exists'}), 400)
         new_user = User(username=data['username'], email=data['email'])
         db.session.add(new_user) # add user
         db.session.commit() # commit changes
         return make_response(jsonify({'message': 'user created'}), 201)
     except Exception as e:
-        return make_response(jsonify({'message': 'error creating user'}), 500)
+        return make_response(jsonify({'message': 'error creating user', 'error': str(e)}), 500)
     
 #get all users
 @app.route('/api/users', methods=['GET'])
