@@ -10,7 +10,7 @@ services:
     image: nginx:latest
     volumes:
       - ./nginx.conf/nginx.conf:/etc/nginx/nginx.conf # mount the nginx config file
-      - ./FrontEnd:/usr/share/nginx/html # mount the front end files(html/css/scss/js)
+      - ./static:/usr/share/nginx/html # mount the front end files(html/css/scss/js)
     ports:
       - "80:80" # port being listened on
 

@@ -1,11 +1,8 @@
 from flask import Flask, request, jsonify, make_response, render_template
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
-<<<<<<< Updated upstream
-=======
 import xmltodict # for xml convert
 from flask_cors import CORS #cross origin resource sharing
->>>>>>> Stashed changes
 
 
 app = Flask(__name__)
