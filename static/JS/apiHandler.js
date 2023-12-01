@@ -21,15 +21,14 @@ function get_user_data(user_id) {
     fetch(`api/users/${user_id}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json().then(error => {
+                    throw new Error(error.message);
+                });
             }
-            return response.json();
-        })
-        .then(data => {
             document.getElementById('get_user_data').textContent = JSON.stringify(data);
         })
         .catch(error => {
-            console.error(`There was a problem with the fetch operation of user ${user_id}:`, error);
+            document.getElementById('get_user_data').textContent = error.message;
         });
 }
 // event lisnter for get user button
@@ -75,14 +74,14 @@ function put_user(user_name, user_email, user_id) {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json().then(error => {
+                    throw new Error(error.message);
+                });
             }
             return document.getElementById('put_user-update_action_response').textContent = 'User updated successfully!';
         })
         .catch(error => {
-            error.json().then(error => {
-                document.getElementById('put_user-update_action_response').textContent = error.message;
-            })
+            document.getElementById('put_user-update_action_response').textContent = error.message;
         });
 }
 // event lisnter for put user button
@@ -98,15 +97,16 @@ function delete_user(user_id) {
     fetch(`api/users/${user_id}`, { method: 'DELETE' })
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json().then(error => {
+                    throw new Error(error.message);
+                });
             }
-            return document.getElementById('delete_user_action_response').textContent = 'User deleted successfully!';
+            document.getElementById('delete_user_action_response').textContent = 'User deleted successfully!';
         })
         .catch(error => {
-            error.json().then(error => {
-                document.getElementById('delete_user_action_response').textContent = error.message;
-            })
+            document.getElementById('delete_user_action_response').textContent = error.message;
         });
+
 }
 // event lisnter for get user button
 document.getElementById('delete_user_button').addEventListener('click', function () {
