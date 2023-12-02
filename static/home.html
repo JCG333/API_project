@@ -8,37 +8,48 @@
 
 <body>
 
-    <!-- api request users button and respose container -->
+    <div id="data_display"></div>
+
+    <div id="header">
+        <h1>API CRUD page</h1>
+    </div>
+
+    <div id="sidebar">
+
+        <!-- api CREATE user button and respose container -->
+        <button id="create_user_button">Create user</button><br><br>
+        <input type="text" placeholder="name..." id="user_name_input-post"><br>
+        <input type="text" placeholder="email..." id="user_email_input-post"><br>
+        <div id="create_user_action_response"></div>
+        <br>
+
+        <!-- api UPDATE user button and respose container -->
+        <button id="update_user_button">Update user</button><br><br>
+        <input type="text" placeholder="id of user..." id="user_id_input-put"><br>
+        <input type="text" placeholder="name..." id="user_name_input-put"><br>
+        <input type="text" placeholder="email..." id="user_email_input-put"><br>
+        <div id="update_user_action_response"></div>
+        <br>
+
+        <!-- api DELETE user by id button and respose container -->
+        <button id="delete_user_button">Delete user</button><br><br>
+        <input type="text" placeholder="user id..." id="user_id_input-delete"><br>
+        <div id="delete_user_action_response"></div>
+        <br>
+    </div>
+
+    <!-- api request users button and respose container 
     <button id="get_users_button">Get Users</button>
     <div id="get_users_data"></div>
     <br>
+    -->
 
-    <!-- api request user by id button and respose container -->
+    <!-- api request user by id button and respose container 
     <button id="get_user_button">Get User</button>
     <input type="text" placeholder="user id..." id="user_id_input">
     <div id="get_user_data"></div>
     <br>
-
-    <!-- api post user button and respose container -->
-    <button id="create_user_button">Create user</button>
-    <input type="text" placeholder="name..." id="user_name_input-post">
-    <input type="text" placeholder="email..." id="user_email_input-post">
-    <div id="post_user-creation_action_response"></div>
-    <br>
-
-    <!-- api put user button and respose container -->
-    <button id="update_user_button">Update user</button>
-    <input type="text" placeholder="id of user..." id="user_id_input-put">
-    <input type="text" placeholder="name..." id="user_name_input-put">
-    <input type="text" placeholder="email..." id="user_email_input-put">
-    <div id="put_user-update_action_response"></div>
-    <br>
-
-    <!-- api delete user by id button and respose container -->
-    <button id="delete_user_button">Delete user</button>
-    <input type="text" placeholder="user id..." id="user_id_input-delete">
-    <div id="delete_user_action_response"></div>
-    <br>
+    -->
 
     <!-- link javascript file -->
     <script src="JS/apiHandler.js"></script>
