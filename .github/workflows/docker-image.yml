@@ -8,10 +8,7 @@ on:
 
 jobs:
   docker:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
