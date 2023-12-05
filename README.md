@@ -1,15 +1,22 @@
 # API App project
 
-This project is for development purposes. To create an API application and learn about an applications life cycle.
+This project is for development purposes. A API application with web interface.
 
-**Development tools** <br>
+**Development** <br>
 
-- App language: Python 3.9
-- App web framework: Flask
-- Database management: PostgreSQL
+- Static
+  - Server service: Nginx 
+  - Javascript
+  - HTML
+  - CSS
+- Application
+  - Server service: Unicorn  
+  - App language: Python
+  - App web framework: Flask
+  - Database management: PostgreSQL
 - Container management: Docker
 
-**Development software** <br>
+**Development software tools** <br>
 
 - IDE: VScode
 - API testing: Postman
