@@ -1,0 +1,213 @@
+$font-stack: "Amazon Ember", sans-serif;
+$primary-color: #333;
+
+body {
+    height: 100vh;
+    font: 100% $font-stack;
+    font-weight: normal;
+    font-size: small;
+    color: $primary-color;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    box-sizing: border-box;
+    width: 20%;
+    height: 10%;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    font-size: smaller;
+    border-right: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 27px;
+}
+
+#sidebar {
+    box-sizing: border-box;
+    width: 20%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    border-right: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#data_display {
+    box-sizing: border-box;
+    width: 80%;
+    height: 300px;
+    overflow-y: auto;
+    float: right;
+    background-color: rgb(255, 255, 255);
+    color: black;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        // table header and body
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 3px;
+        }
+
+        //table header
+        th {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border-bottom: 1px solid #ddd;
+
+        }
+
+        //table rows even
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+
+        }
+
+        //table rows odd
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    }
+
+}
+
+// =========== BUTTONS ===========
+
+#create_user_button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+}
+
+#create_user_button:hover {
+    background-color: #f7fafa;
+}
+
+#create_user_button:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+
+#update_user_button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+}
+
+#update_user_button:hover {
+    background-color: #f7fafa;
+}
+
+#update_user_button:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+#delete_user_button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+}
+
+#delete_user_button:hover {
+    background-color: #f7fafa;
+}
+
+#delete_user_button:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+// =========== FORM ===========
+
+#user_name_input-post {
+    width: 100px;
+
+}
+
+#user_email_input-post {
+    width: 100px;
+}
+
+#user_name_input-put {
+    width: 100px;
+}
+
+#user_email_input-put {
+    width: 100px;
+}
+
+#user_id_input-put {
+    width: 100px;
+}
+
+#user_id_input-delete {
+    width: 100px;
+}

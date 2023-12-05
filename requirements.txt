@@ -1,3 +1,6 @@
-flask
-psycopg2-binary
-Flask-SQLAlchemy
+flask #web framework
+flask_cors #cross origin resource sharing for flask api
+psycopg2-binary #postgres
+Flask-SQLAlchemy #sqlalchemy
+xmltodict #xml
+gunicorn #web server

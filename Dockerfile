@@ -14,5 +14,9 @@ COPY . /app/
 # Expose a port
 EXPOSE 4000
 
-# Run Flask
-CMD ["flask", "run", "--host=0.0.0.0", "--port=4000"]
+# Run app through gunicorn
+# --reload: reloads the app when code changes(only use in development)
+# -w: number of workers
+# --bind: bind to host:port
+# app:app: module:variable
+CMD ["gunicorn","--reload", "-w", "4","--bind", "0.0.0.0:4000", "app:app"] 
