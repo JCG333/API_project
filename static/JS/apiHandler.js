@@ -74,7 +74,7 @@ function create_user(user_name, user_email) {
         })
         // Error handling
         .catch(error => {
-            document.getElementById('create_user_action_response').textContent = error;
+            document.getElementById('create_user_action_response').textContent = error.message;
         });
 }
 // event lisnter for CREATE user button
@@ -106,7 +106,7 @@ function update_user(user_name, user_email, user_id) {
         })
         // Error handling
         .catch(error => {
-            document.getElementById('update_user_action_response').textContent = error;
+            document.getElementById('update_user_action_response').textContent = error.message;
         });
 }
 // event lisnter for UPDATE user button
@@ -134,7 +134,7 @@ function delete_user(user_id) {
         })
         // Error handling
         .catch(error => {
-            document.getElementById('delete_user_action_response').textContent = error;
+            document.getElementById('delete_user_action_response').textContent = error.message;
         });
 
 }
